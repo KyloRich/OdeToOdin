@@ -9,15 +9,13 @@
     body {
       margin: 0;
       font-family: 'MedievalSharp', cursive;
-      background: linear-gradient(#111 10%, #222 100%), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-repeat: repeat;
-      background-attachment: fixed;
+      background: #111 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       color: #f0f0f0;
     }
 
     header {
-      background: rgba(0,0,0,0.85);
-      padding: 3rem 1rem 2rem;
+      background: #000;
+      padding: 4rem 1rem 3rem;
       text-align: center;
       font-family: 'UnifrakturCook', cursive;
       font-size: 3rem;
@@ -27,65 +25,54 @@
       text-shadow: 0 0 15px #fff;
     }
 
-    .quote {
-      font-size: 1.2rem;
-      font-style: italic;
-      color: #ccc;
-      text-align: center;
-      margin: 1rem auto 2rem;
-    }
-
-    .crest {
-      display: block;
-      margin: 0 auto 2rem;
-      max-width: 120px;
-      animation: wave 4s infinite ease-in-out;
-      filter: drop-shadow(0 0 8px #fff2);
-    }
-
-    @keyframes wave {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(1.5deg); }
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: rgba(255, 255, 255, 0.08);
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.06);
       padding: 2rem;
       border: 2px solid #888;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 0 20px rgba(255,255,255,0.1);
-      opacity: 0;
-      transform: translateY(40px);
-      animation: scrollFadeIn 2s forwards ease-out;
     }
 
-    @keyframes scrollFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h2 {
+    section h2 {
       font-family: 'UnifrakturCook', cursive;
       font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: #fff;
+      text-align: center;
     }
 
-    p {
-      line-height: 1.8;
+    section p {
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      line-height: 1.8;
       color: #ddd;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom, #000, #111);
+      padding: 4rem 1rem;
+      text-align: center;
+      color: #fff;
+      border-bottom: 2px solid #444;
+    }
+
+    .hero h1 {
+      font-family: 'UnifrakturCook', cursive;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      font-style: italic;
     }
 
     .cta {
       text-align: center;
-      margin-top: 2.5rem;
+      margin: 3rem 0;
     }
 
     .cta button {
@@ -108,15 +95,6 @@
       box-shadow: 0 0 20px rgba(255,255,255,0.8);
     }
 
-    .flicker {
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-      20%, 24%, 55% { opacity: 0.4; }
-    }
-
     footer {
       text-align: center;
       margin: 4rem 0 2rem;
@@ -124,14 +102,14 @@
       color: #777;
     }
 
-    audio {
-      display: none;
-    }
-
     @media(max-width: 600px) {
       header {
         font-size: 2rem;
         padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -140,58 +118,45 @@
 
   <header>
     ⚔️ The Teutonic Order Calls for Odin ⚔️
-    <div class="quote flicker">"He who rides with the Order never rides alone."</div>
   </header>
 
-  <!-- Crest / Banner -->
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_the_Teutonic_Order.svg/800px-Flag_of_the_Teutonic_Order.svg.png"
-    alt="Teutonic Order Banner"
-    class="crest"
-  />
+  <div class="hero">
+    <h1>Brother Odin, the Hall Grows Quiet</h1>
+    <p>We feel your absence. We await your return.</p>
+  </div>
 
-  <div class="container">
-    <h2>To Our Brother, Odin</h2>
-    <p>
-      The hall stands colder. The mead goes untouched. The fire whispers your name.
-    </p>
-    <p>
-      Your banner, black and white, still hangs above the stone. Your brothers still carry your stories into battle.
-      But no tale compares to your return.
-    </p>
-    <p>
-      The Order endures, but it is quieter. Like a war drum without rhythm. Like steel without a wielder.
-    </p>
-    <p>
-      We do not beg. We do not plead. We simply remind you: <br>
-      You are Odin. And the Teutonic Order is not complete without you.
-    </p>
+  <section>
+    <h2>Odin's Legacy</h2>
+    <p>Odin is not just a name — it's a presence. A calm voice in chaos. A steady hand in war. A brother in all things.</p>
+    <p>He is chill when tensions run high. He brings laughter, loyalty, and balance to our ranks.</p>
+    <p>Above all, he is an honorable knight — the kind who leads not with words, but by unwavering example.</p>
+  </section>
 
-    <div class="cta">
-      <button onclick="alert('The gates stand open, brother. Your place awaits.')">Return to the Order</button>
-    </div>
+  <section>
+    <h2>What We Miss</h2>
+    <p>We miss the 5v5's — the glorious battles fought shoulder-to-shoulder. The tactics. The trust. The triumphs.</p>
+    <p>Without you, our warband feels incomplete. There’s an echo where your laughter used to be. A pause where your presence should lead.</p>
+  </section>
+
+  <section>
+    <h2>Our Regret</h2>
+    <p>We failed to show you your worth. We undervalued your consistency, your friendship, your contribution. That is on us. And we own it.</p>
+    <p>But we are not too proud to admit our mistake. Nor too foolish to let it go unspoken.</p>
+  </section>
+
+  <section>
+    <h2>Words from the Order</h2>
+    <p>Odin, the gates are open. The fire is lit. The mead is poured. The Order is ready to be whole again.</p>
+    <p>Your shield still hangs in the great hall. No one else dares to touch it. It waits for you — as we all do.</p>
+  </section>
+
+  <div class="cta">
+    <button onclick="alert('The horn has sounded. It is time.')">Return to the Order</button>
   </div>
 
   <footer>
-    Raised by your brethren. For honor. For Odin. For the Order.
+    Made with brotherhood. Forged in memory. Sealed in steel.
   </footer>
-
-  <!-- Background ambient audio (looped, quiet) -->
-  <audio autoplay loop muted id="bgAudio">
-    <source src="https://cdn.pixabay.com/audio/2022/03/26/audio_9c5c7db7f8.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    // Unmute on user interaction (for mobile autoplay policies)
-    document.addEventListener('click', () => {
-      const audio = document.getElementById('bgAudio');
-      if (audio.muted) {
-        audio.muted = false;
-        audio.volume = 0.4;
-      }
-    });
-  </script>
 
 </body>
 </html>
