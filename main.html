@@ -9,103 +9,189 @@
     body {
       margin: 0;
       font-family: 'MedievalSharp', cursive;
-      background: #f8f1e7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      color: #2c1a00;
+      background: linear-gradient(#111 10%, #222 100%), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #f0f0f0;
     }
 
     header {
-      background: #111;
-      color: #fff;
-      padding: 2rem;
+      background: rgba(0,0,0,0.85);
+      padding: 3rem 1rem 2rem;
       text-align: center;
       font-family: 'UnifrakturCook', cursive;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
+      font-size: 3rem;
+      color: #fff;
+      letter-spacing: 1.5px;
+      border-bottom: 3px solid #ccc;
+      text-shadow: 0 0 15px #fff;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ccc;
+      text-align: center;
+      margin: 1rem auto 2rem;
+    }
+
+    .crest {
+      display: block;
+      margin: 0 auto 2rem;
+      max-width: 120px;
+      animation: wave 4s infinite ease-in-out;
+      filter: drop-shadow(0 0 8px #fff2);
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(1.5deg); }
     }
 
     .container {
       max-width: 800px;
-      margin: 3rem auto;
-      background: rgba(255, 248, 220, 0.9);
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.08);
       padding: 2rem;
-      border: 6px double #774c00;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border: 2px solid #888;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: scrollFadeIn 2s forwards ease-out;
+    }
+
+    @keyframes scrollFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h2 {
       font-family: 'UnifrakturCook', cursive;
       font-size: 2rem;
       text-align: center;
+      margin-bottom: 1.5rem;
+      color: #fff;
     }
 
     p {
-      line-height: 1.6;
+      line-height: 1.8;
       font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #ddd;
     }
 
     .cta {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     .cta button {
       font-size: 1.2rem;
-      background: #774c00;
+      background: #000;
       color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
+      border: 2px solid #fff;
+      padding: 0.75rem 2rem;
       border-radius: 8px;
       cursor: pointer;
       font-family: 'MedievalSharp', cursive;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
     .cta button:hover {
-      background: #996600;
+      background: #fff;
+      color: #000;
+      border-color: #000;
+      box-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+
+    .flicker {
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.4; }
     }
 
     footer {
       text-align: center;
-      margin: 3rem 0 1rem;
+      margin: 4rem 0 2rem;
       font-size: 0.9rem;
-      color: #555;
+      color: #777;
+    }
+
+    audio {
+      display: none;
     }
 
     @media(max-width: 600px) {
       header {
         font-size: 2rem;
+        padding: 2rem 1rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     ⚔️ The Teutonic Order Calls for Odin ⚔️
+    <div class="quote flicker">"He who rides with the Order never rides alone."</div>
   </header>
 
+  <!-- Crest / Banner -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_the_Teutonic_Order.svg/800px-Flag_of_the_Teutonic_Order.svg.png"
+    alt="Teutonic Order Banner"
+    class="crest"
+  />
+
   <div class="container">
-    <h2>Dear Odin, Knight of Valor</h2>
+    <h2>To Our Brother, Odin</h2>
     <p>
-      The fires in the great hall have dimmed without your tales.<br>
-      Your shield still hangs in the armory — polished, waiting.<br><br>
-      The battles rage on, but your absence is felt more deeply than any wound.
+      The hall stands colder. The mead goes untouched. The fire whispers your name.
     </p>
     <p>
-      You were not merely a warrior — you were our compass, our thunder, our kin.
-      The Order remains, but it is not whole. A blade without its edge. A banner without its wind.
+      Your banner, black and white, still hangs above the stone. Your brothers still carry your stories into battle.
+      But no tale compares to your return.
     </p>
     <p>
-      We write not to summon — but to remind you of who you are. <br>
-      You are Odin, and you are ours.
+      The Order endures, but it is quieter. Like a war drum without rhythm. Like steel without a wielder.
+    </p>
+    <p>
+      We do not beg. We do not plead. We simply remind you: <br>
+      You are Odin. And the Teutonic Order is not complete without you.
     </p>
 
     <div class="cta">
-      <button onclick="alert('The gate is open to you, Brother.')">Return to the Order</button>
+      <button onclick="alert('The gates stand open, brother. Your place awaits.')">Return to the Order</button>
     </div>
   </div>
 
   <footer>
-    Made with honor by your brothers of the Teutonic Order.
+    Raised by your brethren. For honor. For Odin. For the Order.
   </footer>
+
+  <!-- Background ambient audio (looped, quiet) -->
+  <audio autoplay loop muted id="bgAudio">
+    <source src="https://cdn.pixabay.com/audio/2022/03/26/audio_9c5c7db7f8.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Unmute on user interaction (for mobile autoplay policies)
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bgAudio');
+      if (audio.muted) {
+        audio.muted = false;
+        audio.volume = 0.4;
+      }
+    });
+  </script>
+
 </body>
 </html>
